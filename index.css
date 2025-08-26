@@ -468,9 +468,9 @@ button {
   margin: 0 auto;
   border-radius: 50%;
   background: conic-gradient(
-    #facc15 0% 40%,
-    #ef4444 40% 70%,
-    #4ade80 70% 90%,
+    #facc15 0% 45%,
+    #4ade80 45% 70%,
+    #ef4444 70% 90%,
     #a855f7 90% 100%
   );
   display: flex;
