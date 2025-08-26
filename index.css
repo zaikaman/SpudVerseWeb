@@ -1036,33 +1036,52 @@ button {
   }
 
   .hamburger-icon {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  width: 100%;
+  height: 100%;
+  position: relative; /* Đặt làm gốc cho các thẻ con có position: absolute */
+}
 
-  .line {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background: #1f2937;
-    border-radius: 2px;
-    transition: transform 350ms ease-out, opacity 350ms ease-out;
-  }
+.line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #1f2937;
+  border-radius: 2px;
+  position: absolute; /* Định vị các đường kẻ một cách chính xác */
+  left: 0;
+  /* Hiệu ứng chuyển động mượt mà hơn */
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1), bottom 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
-  .mobile-nav-toggle[aria-expanded="true"] .line-1 {
-    transform: translateY(8px) rotate(45deg);
-  }
+/* Trạng thái ban đầu của 3 đường kẻ (icon hamburger) */
+.line-1 {
+  top: 10%;
+}
 
-  .mobile-nav-toggle[aria-expanded="true"] .line-2 {
-    opacity: 0;
-  }
+.line-2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  .mobile-nav-toggle[aria-expanded="true"] .line-3 {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+.line-3 {
+  bottom: 10%;
+}
+
+/* Trạng thái khi menu được mở (chuyển thành dấu "X") */
+.mobile-nav-toggle[aria-expanded="true"] .line-1 {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .line-2 {
+  opacity: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .line-3 {
+  bottom: auto; /* Bỏ 'bottom' để 'top' có hiệu lực */
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
 
   .timeline::before {
     left: 15px;
