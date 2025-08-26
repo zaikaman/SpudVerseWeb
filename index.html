@@ -22,7 +22,15 @@
               />
               <span class="logo-text">Spud Verse</span>
             </a>
-            <ul class="nav-links">
+            <button class="mobile-nav-toggle" aria-controls="nav-links" aria-expanded="false">
+              <span class="sr-only">Menu</span>
+              <div class="hamburger-icon">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+              </div>
+            </button>
+            <ul class="nav-links" id="nav-links" data-visible="false">
               <li><a href="#" class="nav-link">Home</a></li>
               <li><a href="#ecosystem" class="nav-link">Ecosystem</a></li>
               <li><a href="#highlights" class="nav-link">Highlights</a></li>
@@ -541,5 +549,15 @@
         </footer>
       </div>
     </div>
+    <script>
+      const nav = document.querySelector(".nav-links");
+      const navToggle = document.querySelector(".mobile-nav-toggle");
+
+      navToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        const isExpanded = nav.classList.contains("active");
+        navToggle.setAttribute("aria-expanded", isExpanded);
+      });
+    </script>
   </body>
 </html>
