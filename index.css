@@ -1030,7 +1030,7 @@ button {
     z-index: 9999;
     background-color: transparent;
     border: 0;
-    width: 2rem;
+    width: 4rem;
     aspect-ratio: 1;
     margin-right: 1rem; /* Add some spacing */
   }
