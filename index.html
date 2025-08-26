@@ -23,19 +23,19 @@
             </a>
             <ul class="nav-links">
               <li><a href="#" class="nav-link">Home</a></li>
-              <li><a href="#" class="nav-link">Ecosystem</a></li>
-              <li><a href="#" class="nav-link">Highlights</a></li>
-              <li><a href="#" class="nav-link">NFTs</a></li>
-              <li><a href="#" class="nav-link">Token</a></li>
-              <li><a href="#" class="nav-link">Roadmap</a></li>
-              <li><a href="#" class="nav-link">Community</a></li>
+              <li><a href="#ecosystem" class="nav-link">Ecosystem</a></li>
+              <li><a href="#highlights" class="nav-link">Highlights</a></li>
+              <li><a href="#nfts" class="nav-link">NFTs</a></li>
+              <li><a href="#token" class="nav-link">Token</a></li>
+              <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+              <li><a href="#community" class="nav-link">Community</a></li>
             </ul>
           </nav>
         </header>
         <section class="hero-section">
           <div class="container text-center">
             <img
-              src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-08-26/NLfcnLcbQt.png"
+              src="potato_astronaut.png"
               alt="Spud Verse Logo"
               class="hero-logo"
             />
@@ -66,7 +66,7 @@
             </div>
           </div>
         </section>
-        <section class="ecosystem-section">
+        <section id="ecosystem" class="ecosystem-section">
           <div class="container">
             <h2 class="section-title">Ecosystem at a Glance</h2>
             <p class="section-subtitle">
@@ -134,7 +134,7 @@
             </div>
           </div>
         </section>
-        <section class="features-section">
+        <section id="highlights" class="features-section">
           <div class="container">
             <h2 class="section-title">Feature Highlights</h2>
             <p class="section-subtitle">What makes Spud Verse special</p>
@@ -184,7 +184,7 @@
             </div>
           </div>
         </section>
-        <section class="nft-collection-section">
+        <section id="nfts" class="nft-collection-section">
           <div class="container text-center">
             <h2 class="section-title">Spud NFT Collection</h2>
             <p class="section-subtitle">
@@ -197,7 +197,8 @@
                   <span class="rarity-icon">🥔</span>
                 </div>
                 <h3 class="rarity-title">Common</h3>
-                <p class="rarity-description">Basic farming boost +10%</p>
+                <p class="rarity-description">Basic farming boost x2</p>
+                <p class="rarity-description">Guaranteed airdrop claim of 100 $SPUD</p>
                 <div class="rarity-supply">70% Supply</div>
               </article>
               <!-- Rare Card -->
@@ -206,7 +207,8 @@
                   <span class="rarity-icon">✨</span>
                 </div>
                 <h3 class="rarity-title">Rare</h3>
-                <p class="rarity-description">Combat skills +25%</p>
+                <p class="rarity-description">Medium farming boost x5</p>
+                <p class="rarity-description">Guaranteed airdrop claim of 500 $SPUD</p>
                 <div class="rarity-supply">25% Supply</div>
               </article>
               <!-- Legendary Card -->
@@ -215,7 +217,8 @@
                   <span class="rarity-icon">👑</span>
                 </div>
                 <h3 class="rarity-title">Legendary</h3>
-                <p class="rarity-description">All abilities +50%</p>
+                <p class="rarity-description">Maximum farming boost x10</p>
+                <p class="rarity-description">Guaranteed airdrop claim of 1000 $SPUD</p>
                 <div class="rarity-supply">5% Supply</div>
               </article>
             </div>
@@ -237,7 +240,7 @@
             </div>
           </div>
         </section>
-        <section class="tokenomics-section">
+        <section id="token" class="tokenomics-section">
           <div class="container text-center">
             <h2 class="section-title">$SPUD Tokenomics</h2>
             <p class="section-subtitle">
@@ -247,50 +250,146 @@
           <div class="tokenomics-content">
             <!-- Left Column: Chart -->
             <div class="token-chart-container">
-              <div
-                class="donut-chart"
-                role="img"
-                aria-label="Token distribution chart: 45% Gaming Rewards, 25% Community Treasury, 20% Team & Advisors, 10% Marketing & Partnerships"
-              >
+              <div id="tokenomics-chart" class="donut-chart" role="img">
                 <div class="chart-center-text">$SPUD</div>
               </div>
+              <div id="chart-tooltip" class="chart-tooltip"></div>
             </div>
-            <!-- Right Column: Utility -->
-            <div class="token-utility-container">
-              <h3 class="utility-title">Token Utility</h3>
-              <div class="utility-cards">
-                <article class="utility-card">
-                  <div class="utility-icon-bg">
-                    <span class="utility-icon">🎮</span>
-                  </div>
-                  <div class="utility-text">
-                    <h4>In-Game Currency</h4>
-                    <p>Purchase upgrades, items, and NFTs</p>
-                  </div>
-                </article>
-                <article class="utility-card">
-                  <div class="utility-icon-bg">
-                    <span class="utility-icon">💰</span>
-                  </div>
-                  <div class="utility-text">
-                    <h4>Staking Rewards</h4>
-                    <p>Earn passive income through staking</p>
-                  </div>
-                </article>
-                <article class="utility-card">
-                  <div class="utility-icon-bg">
-                    <span class="utility-icon">🗳️</span>
-                  </div>
-                  <div class="utility-text">
-                    <h4>Governance</h4>
-                    <p>Vote on ecosystem improvements</p>
-                  </div>
-                </article>
+            <!-- Right Column: Legend and Utility -->
+            <div class="token-details-container">
+              <div class="token-legend">
+                <h4>Token Allocation</h4>
+                <ul id="token-legend-list">
+                  <!-- Legend items will be inserted here by JavaScript -->
+                </ul>
+              </div>
+              <div class="token-utility-container">
+                <h3 class="utility-title">Token Utility</h3>
+                <div class="utility-cards">
+                  <article class="utility-card">
+                    <div class="utility-icon-bg">
+                      <span class="utility-icon">🎮</span>
+                    </div>
+                    <div class="utility-text">
+                      <h4>In-Game Currency</h4>
+                      <p>Purchase upgrades, items, and NFTs</p>
+                    </div>
+                  </article>
+                  <article class="utility-card">
+                    <div class="utility-icon-bg">
+                      <span class="utility-icon">💰</span>
+                    </div>
+                    <div class="utility-text">
+                      <h4>Staking Rewards</h4>
+                      <p>Earn passive income through staking</p>
+                    </div>
+                  </article>
+                  <article class="utility-card">
+                    <div class="utility-icon-bg">
+                      <span class="utility-icon">🗳️</span>
+                    </div>
+                    <div class="utility-text">
+                      <h4>Governance</h4>
+                      <p>Vote on ecosystem improvements</p>
+                    </div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="roadmap-section">
+
+        <div id="whitelist-modal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Join the Whitelist</h2>
+            <p>You can get whitelisted for our NFT mint by ranking in the top 5,000 of our Zealy campaign or on our Telegram game leaderboard.</p>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            // Tokenomics Chart Logic
+            const chart = document.getElementById("tokenomics-chart");
+            const tooltip = document.getElementById("chart-tooltip");
+            const legendList = document.getElementById("token-legend-list");
+
+            const tokenomicsData = [
+              { name: "In-Game Currency", percentage: 45, color: "#FFD700" },
+              { name: "Staking Rewards", percentage: 25, color: "#FF6347" },
+              { name: "Governance", percentage: 20, color: "#9370DB" },
+              { name: "Team", percentage: 10, color: "#3CB371" },
+            ];
+
+            let cumulativePercentage = 0;
+            const gradientParts = tokenomicsData.map((item) => {
+              const start = cumulativePercentage;
+              const end = cumulativePercentage + item.percentage;
+              cumulativePercentage = end;
+              return `${item.color} ${start}% ${end}%`;
+            });
+
+            chart.style.background = `conic-gradient(${gradientParts.join(", ")})`;
+
+            tokenomicsData.forEach(item => {
+              const listItem = document.createElement("li");
+              listItem.innerHTML = `
+                <span class="legend-color" style="background-color: ${item.color};"></span>
+                <span class="legend-name">${item.name}</span>
+                <span class="legend-percentage">${item.percentage}%</span>
+              `;
+              legendList.appendChild(listItem);
+            });
+
+            chart.addEventListener("mousemove", (e) => {
+              const rect = chart.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+              let angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI);
+              angle = (angle + 450) % 360;
+              const percentage = (angle / 360) * 100;
+
+              let currentPercentage = 0;
+              for (const item of tokenomicsData) {
+                currentPercentage += item.percentage;
+                if (percentage <= currentPercentage) {
+                  tooltip.style.display = "block";
+                  tooltip.style.left = `${e.clientX + 15}px`;
+                  tooltip.style.top = `${e.clientY - 10}px`;
+                  tooltip.innerHTML = `<strong>${item.name}</strong>: ${item.percentage}%`;
+                  return;
+                }
+              }
+            });
+
+            chart.addEventListener("mouseleave", () => {
+              tooltip.style.display = "none";
+            });
+
+            // Whitelist Modal Logic
+            const whitelistModal = document.getElementById("whitelist-modal");
+            const joinWhitelistBtn = document.querySelector(".cta-banner .btn-white");
+            const closeBtn = document.querySelector(".close-button");
+
+            joinWhitelistBtn.addEventListener("click", (e) => {
+              e.preventDefault();
+              whitelistModal.style.display = "block";
+            });
+
+            closeBtn.addEventListener("click", () => {
+              whitelistModal.style.display = "none";
+            });
+
+            window.addEventListener("click", (event) => {
+              if (event.target == whitelistModal) {
+                whitelistModal.style.display = "none";
+              }
+            });
+          });
+        </script>
+        <section id="roadmap" class="roadmap-section">
           <div class="container text-center">
             <h2 class="section-title">Roadmap</h2>
             <p class="section-subtitle">Our journey to potato domination</p>
@@ -358,7 +457,7 @@
             </div>
           </div>
         </section>
-        <section class="community-section">
+        <section id="community" class="community-section">
           <div class="container text-center">
             <h2 class="section-title">Join the Spud Community</h2>
             <p class="section-subtitle">
@@ -383,8 +482,8 @@
               </div>
             </div>
             <div class="social-links">
-              <a href="#" class="social-btn"><span>🐦</span> Twitter</a>
-              <a href="#" class="social-btn"><span>✈️</span> Telegram</a>
+              <a href="https://x.com/RealSpudVerse" class="social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></a>
+              <a href="https://t.me/spudverseann" class="social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23-7.68-2.43c-.46-.14-.56-.76-.1-1.06l16.75-8.83c.38-.2.84.06.81.48l-3.03 14.45c-.05.22-.24.38-.47.4l-4.5.23c-.34.02-.66-.14-.83-.42z"/></svg><span>Telegram</span></a>
               <!-- <a href="#" class="social-btn"><span>👾</span> Discord</a> -->
             </div>
           </div>
@@ -406,46 +505,37 @@
                   The ultimate potato-powered Web3 gaming ecosystem where farming
                   meets fighting!
                 </p>
-                <div class="footer-socials">
-                  <a href="#">🐦</a>
-                  <a href="#">✈️</a>
-                  <a href="#">👾</a>
-                </div>
               </div>
               <div class="footer-column links">
                 <h4>Game</h4>
                 <ul>
-                  <li><a href="#">Mini App</a></li>
-                  <li><a href="#">PvP Arena</a></li>
-                  <li><a href="#">NFT Collection</a></li>
-                  <li><a href="#">Leaderboard</a></li>
+                  <li><a href="https://t.me/spudverse_bot?start=930339179">Mini App (Telegram)</a></li>
+                  <li><a href="#">PvP Arena (Coming Soon)</a></li>
+                  <li><a href="#">NFT Collection (Coming Soon)</a></li>
                 </ul>
               </div>
               <div class="footer-column links">
-                <h4>Economy</h4>
+                <h4>Community</h4>
                 <ul>
-                  <li><a href="#">$SPUD Token</a></li>
-                  <li><a href="#">Staking</a></li>
-                  <li><a href="#">Marketplace</a></li>
-                  <li><a href="#">Whitepaper</a></li>
+                  <li><a href="https://t.me/spudverseann">Join Telegram</a></li>
+                  <li><a href="https://x.com/RealSpudVerse">Follow X</a></li>
+                  <li><a href="#">Discord (Soon)</a></li>
                 </ul>
               </div>
-              <div class="footer-column links">
+              <!-- <div class="footer-column links">
                 <h4>Support</h4>
                 <ul>
-                  <li><a href="#">Help Center</a></li>
                   <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Bug Reports</a></li>
                   <li><a href="#">Terms & Privacy</a></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
             <div class="footer-bottom">
               <p>© 2024 Spud Verse. All rights reserved. Built with 🥔 and ❤️</p>
             </div>
           </div>
-          <a href="#" class="play-telegram-btn">
-            <span>✈️</span> Play on Telegram
+          <a href="https://t.me/spudverse_bot?start=930339179" class="play-telegram-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23-7.68-2.43c-.46-.14-.56-.76-.1-1.06l16.75-8.83c.38-.2.84.06.81.48l-3.03 14.45c-.05.22-.24.38-.47.4l-4.5.23c-.34.02-.66-.14-.83-.42z"/></svg><span>Play on Telegram</span>
           </a>
         </footer>
       </div>
