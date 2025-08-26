@@ -113,6 +113,17 @@ button {
 
 .mobile-nav-toggle {
   display: none;
+  z-index: 9999;
+  background-color: transparent;
+  border: 0;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.mobile-nav-toggle .fa-bars {
+  font-size: 32px;
+  color: #1f2937;
 }
 
 /* Hero Section */
